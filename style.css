@@ -1,0 +1,111 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  margin: 0;
+  padding: 30px 15px;
+}
+
+.container {
+  max-width: 420px;
+  margin: auto;
+  background: white;
+  padding: 25px;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.container.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.photo img {
+  width: 100%;
+  border-radius: 14px;
+  margin-bottom: 15px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 0.95em;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.checkbox input {
+  width: auto;
+}
+
+button {
+  margin-top: 22px;
+  width: 100%;
+  padding: 12px;
+  background: #7c9a6d;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #5f7d52;
+}
+
+.gift {
+  margin-top: 18px;
+  background: #f0f7ed;
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 0.9em;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+/* (todo lo anterior se mantiene igual) */
+
+.event-info {
+  margin: 18px 0;
+  background: #fafafa;
+  padding: 14px;
+  border-radius: 12px;
+  font-size: 0.95em;
+  text-align: center;
+  border: 1px dashed #ccc;
+}
