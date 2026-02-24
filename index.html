@@ -2,14 +2,13 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Invitación</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <main class="container" id="card">
-
     <div class="photo">
       <img src="img/img1.jpeg" alt="Foto" />
     </div>
@@ -19,18 +18,15 @@
       Estamos felices de compartir este momento contigo y por eso queremos invitarte a un almuerzo en nuestro día especial.
     </p>
 
-    <!-- INFO EVENTO -->
     <div class="event-info">
       📍 <strong>Lugar:</strong> IL FORNO - MALL PLAZA OESTE<br />
       🗓 <strong>Fecha:</strong> Viernes 27 de marzo 2026<br />
       ⏰ <strong>Hora:</strong> 12:30 hrs
     </div>
 
-    <form id="rsvpForm" novalidate>
-
-      <!-- Invitado -->
+    <form id="rsvpForm">
       <label for="name">Nombre completo</label>
-      <input type="text" id="name" required placeholder="Ej: Juan Pérez" />
+      <input type="text" id="name" required />
 
       <label for="attendance">¿Asistirás?</label>
       <select id="attendance" required>
@@ -39,80 +35,26 @@
         <option value="No">No</option>
       </select>
 
-      <div id="guestOptions">
-        <label for="meal">Plato</label>
-        <select id="meal" required>
-          <option value="">Selecciona</option>
-          <option value="Costillar">Costillar con Puré</option>
-          <option value="Pechuga">Pechuga de Pollo a lo Pobre</option>
-          <option value="Chorillana">Chorillana Tradicional</option>
-          <option value="Pesto">Fettuccini al pesto</option>
-          <option value="Lasagna">Lasaña</option>
-        </select>
+      <label for="meal">Plato</label>
+      <select id="meal" required>
+        <option value="">Selecciona</option>
+        <option value="Costillar">Costillar con Puré</option>
+        <option value="Pechuga">Pechuga de Pollo a lo Pobre</option>
+        <option value="Chorillana">Chorillana Tradicional</option>
+        <option value="Pesto">Fettuccini al pesto</option>
+        <option value="Lasagna">Lasaña</option>
+      </select>
 
-        <label for="drink">Bebida</label>
-        <select id="drink" required>
-          <option value="">Selecciona</option>
-          <option value="Coca cola">Coca cola</option>
-          <option value="Fanta">Fanta</option>
-          <option value="Sprite">Sprite</option>
-        </select>
-
-        <!-- Acompañante -->
-        <label for="plusOne">¿Asistirás con acompañante (+1)?</label>
-        <select id="plusOne">
-          <option value="No">No</option>
-          <option value="Sí">Sí</option>
-        </select>
-
-        <div id="plusOneFields" class="hidden">
-          <label for="plusMeal">Plato acompañante</label>
-          <select id="plusMeal">
-            <option value="">Selecciona</option>
-            <option value="Costillar">Costillar con Puré</option>
-            <option value="Pechuga">Pechuga de Pollo a lo Pobre</option>
-            <option value="Chorillana">Chorillana Tradicional</option>
-            <option value="Pesto">Fettuccini al pesto</option>
-            <option value="Lasagna">Lasaña</option>
-          </select>
-
-          <label for="plusDrink">Bebida acompañante</label>
-          <select id="plusDrink">
-            <option value="">Selecciona</option>
-            <option value="Coca cola">Coca cola</option>
-            <option value="Fanta">Fanta</option>
-            <option value="Sprite">Sprite</option>
-          </select>
-        </div>
-      </div>
-
-      <!-- REGALO -->
-      <div class="gift">
-        🎁 Nuestro mejor regalo es tu presencia,<br />
-        pero si deseas apoyarnos, agradeceremos un aporte<br />
-        para nuestra futura casa💕
-      </div>
-
-      <div class="checkbox">
-        <input type="checkbox" id="giftCheck" />
-        <label for="giftCheck">Deseo aportar mediante transferencia</label>
-      </div>
-
-      <div id="bankInfo" class="hidden gift">
-        <strong>Datos para transferencia</strong><br /><br />
-        Banco: Banco Estado<br />
-        Nombre: Valentina Aranguiz<br />
-        RUT: 19.136.155-5<br />
-        Tipo de cuenta: Cuenta RUT<br />
-        N° Cuenta: 19136155<br />
-        Email: vale.pia.2022@gmail.com
-      </div>
-
-      <div id="formMsg" class="hidden"></div>
+      <label for="drink">Bebida</label>
+      <select id="drink" required>
+        <option value="">Selecciona</option>
+        <option value="Coca cola">Coca cola</option>
+        <option value="Fanta">Fanta</option>
+        <option value="Sprite">Sprite</option>
+      </select>
 
       <button type="submit">Enviar confirmación</button>
     </form>
-
   </main>
 
   <script src="main.js"></script>

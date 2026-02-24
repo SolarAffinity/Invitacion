@@ -1,160 +1,108 @@
-* {
-  box-sizing: border-box;
+/* Base anti-desborde (esto arregla el 90% de problemas) */
+*{ box-sizing:border-box; }
+html, body{
+  margin:0;
+  padding:0;
+  width:100%;
+  max-width:100%;
+  overflow-x:hidden;
 }
 
-html, body {
-  margin: 0;
-  padding: 0;
-}
+img{ max-width:100%; height:auto; display:block; }
 
-body {
+body{
   font-family: Arial, sans-serif;
-  background: #f5f5f5;
-  padding: clamp(14px, 4vw, 30px) clamp(12px, 3.5vw, 15px);
-  -webkit-text-size-adjust: 100%;
-  overflow-x: hidden;
+  background:#f5f5f5;
+  padding: 16px;              /* simple y seguro */
+  -webkit-text-size-adjust:100%;
 }
 
-/* Container responsive */
-.container {
+/* Container: ocupa el ancho disponible, con límite en desktop */
+.container{
   width: 100%;
-  max-width: 420px;
+  max-width: 520px;
   margin: 0 auto;
-  background: white;
-  padding: clamp(16px, 4vw, 25px);
-  border-radius: clamp(14px, 4vw, 18px);
+  background:#fff;
+  padding: 18px;
+  border-radius: 18px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.12);
 
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease;
+  opacity:0;
+  transform: translateY(18px);
+  transition: all .6s ease;
 }
 
-.container.show {
-  opacity: 1;
+.container.show{
+  opacity:1;
   transform: translateY(0);
 }
 
-/* Imagen flexible */
-.photo img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: clamp(12px, 3vw, 14px);
-  margin-bottom: clamp(12px, 3vw, 15px);
+.photo img{
+  width:100%;
+  border-radius: 14px;
+  margin-bottom: 14px;
 }
 
-/* Tipografías responsivas */
-h1 {
-  text-align: center;
+h1{
+  text-align:center;
   margin: 0 0 10px;
-  font-size: clamp(22px, 5.5vw, 30px);
-  line-height: 1.15;
+  font-size: clamp(24px, 6vw, 34px);
+  line-height: 1.1;
 }
 
-.subtitle {
-  text-align: center;
-  font-size: clamp(0.9em, 3.8vw, 1em);
-  margin-bottom: clamp(14px, 4vw, 20px);
-  color: #555;
-  line-height: 1.4;
-}
-
-label {
-  display: block;
-  margin-top: clamp(12px, 3.5vw, 15px);
-  font-weight: bold;
-  font-size: clamp(0.95em, 3.8vw, 1em);
-}
-
-/* Inputs más cómodos en móvil */
-input,
-select {
-  width: 100%;
-  padding: clamp(10px, 3.5vw, 12px);
-  margin-top: 6px;
-  border-radius: 10px;
-  border: 1px solid #ccc;
-  font-size: 16px; /* evita zoom automático en iPhone */
-}
-
-/* Estados focus para accesibilidad */
-input:focus,
-select:focus {
-  outline: none;
-  border-color: rgba(124, 154, 109, 0.8);
-  box-shadow: 0 0 0 3px rgba(124, 154, 109, 0.18);
-}
-
-/* Checkbox: mejor layout en móvil */
-.checkbox {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  margin-top: clamp(12px, 3.5vw, 15px);
-}
-
-.checkbox input {
-  width: auto;
-  margin-top: 2px;
-}
-
-/* Botón táctil */
-button {
-  margin-top: clamp(16px, 4.5vw, 22px);
-  width: 100%;
-  padding: clamp(12px, 4vw, 14px);
-  background: #7c9a6d;
-  color: white;
-  border: none;
-  border-radius: 12px;
-  font-size: clamp(1em, 4vw, 1.05em);
-  cursor: pointer;
-  min-height: 44px; /* tamaño mínimo recomendado para touch */
-}
-
-button:hover {
-  background: #5f7d52;
-}
-
-button:active {
-  transform: translateY(1px);
-}
-
-/* Bloque regalo */
-.gift {
-  margin-top: clamp(14px, 4vw, 18px);
-  background: #f0f7ed;
-  padding: clamp(12px, 3.8vw, 14px);
-  border-radius: 12px;
-  font-size: clamp(0.88em, 3.6vw, 0.95em);
-  text-align: center;
+.subtitle{
+  text-align:center;
+  margin: 0 0 16px;
+  color:#555;
+  font-size: clamp(15px, 4vw, 17px);
   line-height: 1.45;
 }
 
-/* Ocultos */
-.hidden {
-  display: none;
-}
-
-/* Info evento */
-.event-info {
-  margin: clamp(14px, 4vw, 18px) 0;
-  background: #fafafa;
-  padding: clamp(12px, 3.8vw, 14px);
+.event-info{
+  margin: 16px 0;
+  background:#fafafa;
+  padding: 14px;
   border-radius: 12px;
-  font-size: clamp(0.9em, 3.7vw, 0.95em);
-  text-align: center;
+  font-size: clamp(14px, 3.8vw, 16px);
+  text-align:center;
   border: 1px dashed #ccc;
   line-height: 1.45;
 }
 
+label{
+  display:block;
+  margin-top: 14px;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+input, select{
+  width:100%;
+  padding: 12px;
+  margin-top: 6px;
+  border-radius: 10px;
+  border:1px solid #ccc;
+  font-size: 16px; /* evita zoom automático en iPhone */
+}
+
+/* Botón táctil */
+button{
+  margin-top: 18px;
+  width:100%;
+  padding: 14px;
+  background:#7c9a6d;
+  color:#fff;
+  border:none;
+  border-radius: 12px;
+  font-size: 16px;
+  cursor:pointer;
+  min-height: 44px;
+}
+
+button:hover{ background:#5f7d52; }
+
 /* Ajuste extra para pantallas muy pequeñas */
-@media (max-width: 360px) {
-  .container {
-    border-radius: 14px;
-  }
-  button {
-    border-radius: 10px;
-  }
+@media (max-width: 360px){
+  body{ padding: 12px; }
+  .container{ padding: 16px; border-radius: 14px; }
 }
