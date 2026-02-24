@@ -2,20 +2,29 @@
   box-sizing: border-box;
 }
 
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: Arial, sans-serif;
   background: #f5f5f5;
-  margin: 0;
-  padding: 30px 15px;
+  padding: clamp(14px, 4vw, 30px) clamp(12px, 3.5vw, 15px);
+  -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
 }
 
+/* Container responsive */
 .container {
+  width: 100%;
   max-width: 420px;
-  margin: auto;
+  margin: 0 auto;
   background: white;
-  padding: 25px;
-  border-radius: 18px;
+  padding: clamp(16px, 4vw, 25px);
+  border-radius: clamp(14px, 4vw, 18px);
   box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.8s ease;
@@ -26,86 +35,126 @@ body {
   transform: translateY(0);
 }
 
+/* Imagen flexible */
 .photo img {
   width: 100%;
-  border-radius: 14px;
-  margin-bottom: 15px;
+  height: auto;
+  display: block;
+  border-radius: clamp(12px, 3vw, 14px);
+  margin-bottom: clamp(12px, 3vw, 15px);
 }
 
+/* Tipografías responsivas */
 h1 {
   text-align: center;
+  margin: 0 0 10px;
+  font-size: clamp(22px, 5.5vw, 30px);
+  line-height: 1.15;
 }
 
 .subtitle {
   text-align: center;
-  font-size: 0.95em;
-  margin-bottom: 20px;
+  font-size: clamp(0.9em, 3.8vw, 1em);
+  margin-bottom: clamp(14px, 4vw, 20px);
   color: #555;
+  line-height: 1.4;
 }
 
 label {
   display: block;
-  margin-top: 15px;
+  margin-top: clamp(12px, 3.5vw, 15px);
   font-weight: bold;
+  font-size: clamp(0.95em, 3.8vw, 1em);
 }
 
+/* Inputs más cómodos en móvil */
 input,
 select {
   width: 100%;
-  padding: 10px;
+  padding: clamp(10px, 3.5vw, 12px);
   margin-top: 6px;
-  border-radius: 8px;
+  border-radius: 10px;
   border: 1px solid #ccc;
+  font-size: 16px; /* evita zoom automático en iPhone */
 }
 
+/* Estados focus para accesibilidad */
+input:focus,
+select:focus {
+  outline: none;
+  border-color: rgba(124, 154, 109, 0.8);
+  box-shadow: 0 0 0 3px rgba(124, 154, 109, 0.18);
+}
+
+/* Checkbox: mejor layout en móvil */
 .checkbox {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 10px;
-  margin-top: 15px;
+  margin-top: clamp(12px, 3.5vw, 15px);
 }
 
 .checkbox input {
   width: auto;
+  margin-top: 2px;
 }
 
+/* Botón táctil */
 button {
-  margin-top: 22px;
+  margin-top: clamp(16px, 4.5vw, 22px);
   width: 100%;
-  padding: 12px;
+  padding: clamp(12px, 4vw, 14px);
   background: #7c9a6d;
   color: white;
   border: none;
-  border-radius: 10px;
-  font-size: 1em;
+  border-radius: 12px;
+  font-size: clamp(1em, 4vw, 1.05em);
   cursor: pointer;
+  min-height: 44px; /* tamaño mínimo recomendado para touch */
 }
 
 button:hover {
   background: #5f7d52;
 }
 
-.gift {
-  margin-top: 18px;
-  background: #f0f7ed;
-  padding: 14px;
-  border-radius: 10px;
-  font-size: 0.9em;
-  text-align: center;
+button:active {
+  transform: translateY(1px);
 }
 
+/* Bloque regalo */
+.gift {
+  margin-top: clamp(14px, 4vw, 18px);
+  background: #f0f7ed;
+  padding: clamp(12px, 3.8vw, 14px);
+  border-radius: 12px;
+  font-size: clamp(0.88em, 3.6vw, 0.95em);
+  text-align: center;
+  line-height: 1.45;
+}
+
+/* Ocultos */
 .hidden {
   display: none;
 }
 
-/* (todo lo anterior se mantiene igual) */
-
+/* Info evento */
 .event-info {
-  margin: 18px 0;
+  margin: clamp(14px, 4vw, 18px) 0;
   background: #fafafa;
-  padding: 14px;
+  padding: clamp(12px, 3.8vw, 14px);
   border-radius: 12px;
-  font-size: 0.95em;
+  font-size: clamp(0.9em, 3.7vw, 0.95em);
   text-align: center;
   border: 1px dashed #ccc;
+  line-height: 1.45;
+}
+
+/* Ajuste extra para pantallas muy pequeñas */
+@media (max-width: 360px) {
+  .container {
+    border-radius: 14px;
+  }
+  button {
+    border-radius: 10px;
+  }
 }
