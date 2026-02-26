@@ -59,7 +59,7 @@ h1{
 }
 
 .event-info{
-  margin: 16px 0;
+  margin: 16px 0 12px;
   background:#fafafa;
   padding: 14px;
   border-radius: 12px;
@@ -67,6 +67,18 @@ h1{
   text-align:center;
   border: 1px dashed #ccc;
   line-height: 1.45;
+}
+
+/* ✅ Fecha límite */
+.deadline{
+  margin: 0 0 14px;
+  background:#f0f7ef;
+  border: 1px solid #cfe2cc;
+  padding: 12px;
+  border-radius: 12px;
+  text-align:center;
+  font-size: clamp(14px, 3.8vw, 16px);
+  line-height: 1.35;
 }
 
 label{
@@ -84,6 +96,39 @@ input, select{
   border:1px solid #ccc;
   font-size: 16px; /* evita zoom automático en iPhone */
 }
+
+/* ✅ Ocultar/mostrar dinámico */
+.hidden{ display:none; }
+
+/* ✅ Checkbox en línea */
+.checkline{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  margin-top: 14px;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+/* Importante: el checkbox NO debe heredar width:100% */
+.checkline input[type="checkbox"]{
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+/* ✅ Caja datos transferencia */
+.bank-box{
+  margin-top: 10px;
+  background:#fafafa;
+  border: 1px dashed #ccc;
+  padding: 12px;
+  border-radius: 12px;
+  font-size: 15px;
+}
+
+.bank-line{ margin: 5px 0; }
 
 /* Botón táctil */
 button{

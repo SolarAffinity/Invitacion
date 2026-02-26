@@ -24,6 +24,11 @@
       ⏰ <strong>Hora:</strong> 12:30 hrs
     </div>
 
+    <!-- ✅ FECHA LÍMITE -->
+    <div class="deadline" id="deadlineText">
+      ⏳ <strong>Confirmar asistencia hasta:</strong> <span id="deadlineDate"></span>
+    </div>
+
     <form id="rsvpForm">
       <label for="name">Nombre completo</label>
       <input type="text" id="name" required />
@@ -53,7 +58,53 @@
         <option value="Sprite">Sprite</option>
       </select>
 
-      <button type="submit">Enviar confirmación</button>
+      <!-- ✅ ACOMPAÑANTE -->
+      <label for="plusOne">¿Vienes con acompañante?</label>
+      <select id="plusOne" required>
+        <option value="No">No</option>
+        <option value="Sí">Sí</option>
+      </select>
+
+      <div id="plusOneFields" class="hidden">
+        <p style="margin:10px 0 6px;font-weight:700">Acompañante</p>
+
+        <label for="plusMeal">Plato acompañante</label>
+        <select id="plusMeal">
+          <option value="">Selecciona</option>
+          <option value="Costillar">Costillar con Puré</option>
+          <option value="Pechuga">Pechuga de Pollo a lo Pobre</option>
+          <option value="Chorillana">Chorillana Tradicional</option>
+          <option value="Pesto">Fettuccini al pesto</option>
+          <option value="Lasagna">Lasaña</option>
+        </select>
+
+        <label for="plusDrink">Bebida acompañante</label>
+        <select id="plusDrink">
+          <option value="">Selecciona</option>
+          <option value="Coca cola">Coca cola</option>
+          <option value="Fanta">Fanta</option>
+          <option value="Sprite">Sprite</option>
+        </select>
+      </div>
+
+      <!-- ✅ TRANSFERENCIA -->
+      <label class="checkline">
+        <input type="checkbox" id="giftCheck" />
+        Haré aporte por transferencia
+      </label>
+
+      <!-- Solo se ve si marcan el check -->
+      <div id="bankInfo" class="hidden bank-box">
+        <p style="margin:0 0 8px;font-weight:700">Datos de transferencia</p>
+        <div class="bank-line"><strong>Banco:</strong> Banco Estado</div>
+        <div class="bank-line"><strong>Tipo:</strong> Cuenta RUT</div>
+        <div class="bank-line"><strong>Nombre:</strong> NOMBRE APELLIDO</div>
+        <div class="bank-line"><strong>RUT:</strong> 12.345.678-9</div>
+        <div class="bank-line"><strong>N° Cuenta:</strong> 12.345.678-9</div>
+        <div class="bank-line"><strong>Email:</strong> correo@ejemplo.com</div>
+      </div>
+
+      <button type="submit">Enviar confirmación por WhatsApp</button>
     </form>
   </main>
 
